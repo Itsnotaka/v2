@@ -8,12 +8,16 @@ import {
 	HashtagIcon,
 	TagIcon,
 } from '@heroicons/react/outline';
+import { LightningIcon } from '../Icons';
+import Link from 'next/link';
 
 const projects = [
-	{ id: 1, name: 'Workflow Inc. / Website Redesign', url: '#' },
-	// More projects...
+	{ id: 1, name: 'Home', url: '/' },
+	{ id: 2, name: 'About me', url: '/about' },
+	{ id: 3, name: 'Writings', url: '/writings' },
 ];
 const recent = [projects[0]];
+
 const quickActions = [
 	{ name: 'Add new file...', icon: DocumentAddIcon, shortcut: 'N', url: '#' },
 	{ name: 'Add new folder...', icon: FolderAddIcon, shortcut: 'F', url: '#' },
@@ -75,7 +79,7 @@ export default function CommandPalette({
 				>
 					<Combobox
 						as="div"
-						className="mx-auto max-w-2xl transform divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white bg-opacity-80 shadow-2xl ring-1 ring-black ring-opacity-5 backdrop-blur backdrop-filter transition-all"
+						className="mx-auto max-w-2xl transform divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white bg-opacity-80 shadow-2xl backdrop-blur backdrop-filter transition-all"
 						// eslint-disable-next-line no-return-assign
 						onChange={(item: any) => (window.location = item.url)}
 						value
@@ -86,7 +90,7 @@ export default function CommandPalette({
 								aria-hidden="true"
 							/>
 							<Combobox.Input
-								className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
+								className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder-gray-500 outline-none focus:outline-none sm:text-sm"
 								placeholder="Search..."
 								onChange={event => setQuery(event.target.value)}
 							/>
@@ -100,7 +104,7 @@ export default function CommandPalette({
 								<li className="p-2">
 									{query === '' && (
 										<h2 className="mt-4 mb-2 px-3 text-xs font-semibold text-gray-900">
-											Recent searches
+											Navigation
 										</h2>
 									)}
 									<ul className="text-sm text-gray-700">
@@ -117,16 +121,19 @@ export default function CommandPalette({
 											>
 												{({ active }) => (
 													<>
-														<FolderIcon
+														<LightningIcon
 															className={classNames(
 																'h-6 w-6 flex-none text-gray-900 text-opacity-40',
 																active && 'text-opacity-100',
 															)}
 															aria-hidden="true"
 														/>
-														<span className="ml-3 flex-auto truncate">
-															{project.name}
-														</span>
+														<Link href={project.url} passHref>
+															<span className="ml-3 flex-auto truncate">
+																{project.name}
+															</span>
+														</Link>
+
 														{active && (
 															<span className="ml-3 flex-none text-gray-500">
 																Jump to...
