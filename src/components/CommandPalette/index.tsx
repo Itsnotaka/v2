@@ -107,43 +107,46 @@ export default function CommandPalette({
 										</h2>
 									)}
 									<ul className="text-sm text-gray-700">
-										{(query === '' ? projects : filteredProjects).map(project => (
-											<Combobox.Option
-												key={project.id}
-												value={project}
-												className={({ active }) =>
-													classNames(
-														'flex cursor-default select-none items-center rounded-md px-3 py-2',
-														active && 'bg-gray-900 bg-opacity-5 text-gray-900',
-													)
-												}
-											>
-												{({ active }) => (
-													<>
-														<LightningIcon
-															className={classNames(
-																'h-6 w-6 flex-none text-gray-900 text-opacity-40',
-																active && 'text-opacity-100',
-															)}
-															aria-hidden="true"
-														/>
-														<Link href={project.url} passHref>
-															<span className="ml-3 flex-auto truncate">
-																{project.name}
-															</span>
-														</Link>
-														<span className="ml-3 flex-none text-xs font-semibold text-gray-500 box-border rounded px-2 shadow-md py-1 bg-primary-400">
+										{(query === '' ? projects : filteredProjects).map(
+											project => (
+												<Combobox.Option
+													key={project.id}
+													value={project}
+													className={({ active }) =>
+														classNames(
+															'flex cursor-default select-none items-center rounded-md px-3 py-2',
+															active &&
+																'bg-gray-900 bg-opacity-5 text-gray-900',
+														)
+													}
+												>
+													{({ active }) => (
+														<>
+															<LightningIcon
+																className={classNames(
+																	'h-6 w-6 flex-none text-gray-900 text-opacity-40',
+																	active && 'text-opacity-100',
+																)}
+																aria-hidden="true"
+															/>
+															<Link href={project.url} passHref>
+																<span className="ml-3 flex-auto truncate">
+																	{project.name}
+																</span>
+															</Link>
+															<span className="ml-3 box-border flex-none rounded bg-primary-400 px-2 py-1 text-xs font-semibold text-gray-500 shadow-md">
 																{project.id}
 															</span>
-														{active && (
-															<span className="ml-3 flex-none text-gray-500">
-																Jump to...
-															</span>
-														)}
-													</>
-												)}
-											</Combobox.Option>
-										))}
+															{active && (
+																<span className="ml-3 flex-none text-gray-500">
+																	Jump to...
+																</span>
+															)}
+														</>
+													)}
+												</Combobox.Option>
+											),
+										)}
 									</ul>
 								</li>
 								{/* {query === '' && (
