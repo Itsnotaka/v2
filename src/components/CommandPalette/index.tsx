@@ -16,7 +16,6 @@ const projects = [
 	{ id: 2, name: 'About me', url: '/about' },
 	{ id: 3, name: 'Writings', url: '/writings' },
 ];
-const recent = [projects[0]];
 
 const quickActions = [
 	{ name: 'Add new file...', icon: DocumentAddIcon, shortcut: 'N', url: '#' },
@@ -108,7 +107,7 @@ export default function CommandPalette({
 										</h2>
 									)}
 									<ul className="text-sm text-gray-700">
-										{(query === '' ? recent : filteredProjects).map(project => (
+										{(query === '' ? projects : filteredProjects).map(project => (
 											<Combobox.Option
 												key={project.id}
 												value={project}
@@ -133,7 +132,9 @@ export default function CommandPalette({
 																{project.name}
 															</span>
 														</Link>
-
+														<span className="ml-3 flex-none text-xs font-semibold text-gray-500 box-border rounded px-2 shadow-md py-1 bg-primary-400">
+																{project.id}
+															</span>
 														{active && (
 															<span className="ml-3 flex-none text-gray-500">
 																Jump to...
@@ -145,7 +146,7 @@ export default function CommandPalette({
 										))}
 									</ul>
 								</li>
-								{query === '' && (
+								{/* {query === '' && (
 									<li className="p-2">
 										<h2 className="sr-only">Quick actions</h2>
 										<ul className="text-sm text-gray-700">
@@ -185,7 +186,7 @@ export default function CommandPalette({
 											))}
 										</ul>
 									</li>
-								)}
+								)} */}
 							</Combobox.Options>
 						)}
 
