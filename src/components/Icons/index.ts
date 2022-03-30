@@ -7,7 +7,7 @@ import EmailIcon from './Email';
 import MonitorIcon from './Monitor';
 import PenIcon from './Pen';
 import CmdIcon from './Cmd';
-
+import LightningIcon from './Lightning';
 export {
 	HomeIcon,
 	MoonIcon,
@@ -18,4 +18,5 @@ export {
 	MonitorIcon,
 	PenIcon,
 	CmdIcon,
+	LightningIcon,
 };

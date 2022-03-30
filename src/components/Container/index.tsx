@@ -50,14 +50,14 @@ export default function Container({ children }: { children: ReactNode }) {
 						title={'Home'}
 					/>
 					<NavItem
-						href="/setup"
+						href="/about"
 						icon={<MonitorIcon className="h-6 w-6" />}
-						title={'My Setup'}
+						title={'About me'}
 					/>
 					<NavItem
 						href="/writings"
 						icon={<PenIcon className="h-6 w-6" />}
-						title={'My Writings'}
+						title={'Writings'}
 					/>
 					<CommandPaletteButton
 						icon={<CmdIcon className="h-5 w-5" />}
