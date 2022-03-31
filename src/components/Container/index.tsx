@@ -41,6 +41,7 @@ export default function Container({ children }: { children: ReactNode }) {
 			<CommandPalette isOpen={isOpen} setIsOpen={setIsOpen} />
 			<Layout>
 				{children}
+
 				<Nav>
 					<SpecialButton href={''} title={'Flow'} />
 					<Separator />

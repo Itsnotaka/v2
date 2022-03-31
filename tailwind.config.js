@@ -32,6 +32,18 @@ module.exports = {
 					800: '#007862',
 					900: '#006252',
 				},
+				mirage: {
+					50: '#f9fafb',
+					100: '#f4f4f5',
+					200: '#e6e7ea',
+					300: '#d3d5d9',
+					400: '#a0a3ab',
+					500: '#6f727c',
+					600: '#4f555f',
+					700: '#3c414c',
+					800: '#232933',
+					900: '#171b26',
+				},
 			},
 			boxShadow: {
 				primary: '0 30px 60px rgba(0,0,0,0.12)',
@@ -39,6 +51,13 @@ module.exports = {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
 			},
+			keyframes: {
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' },
+				},
+			},
+			animation: { wiggle: 'wiggle 200ms ease-in-out' },
 		},
 	},
 	plugins: [require('@tailwindcss/typography')],
