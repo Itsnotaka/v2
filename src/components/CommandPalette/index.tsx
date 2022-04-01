@@ -77,7 +77,7 @@ export default function CommandPalette({
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0"
 				>
-					<Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity" />
+					<Dialog.Overlay className="fixed inset-0 backdrop-blur-sm transition-opacity" />
 				</Transition.Child>
 
 				<Transition.Child
