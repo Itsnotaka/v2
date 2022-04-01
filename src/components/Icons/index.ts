@@ -9,6 +9,7 @@ import PenIcon from './Pen';
 import CmdIcon from './Cmd';
 import LightningIcon from './Lightning';
 import SettingIcon from './Setting';
+import MusicIcon from './Music';
 
 export {
 	HomeIcon,
@@ -22,4 +23,5 @@ export {
 	CmdIcon,
 	LightningIcon,
 	SettingIcon,
+	MusicIcon
 };

@@ -8,6 +8,7 @@ import {
 	MonitorIcon,
 	PenIcon,
 	CmdIcon,
+	MusicIcon,
 } from '../Icons';
 import Layout from '../Layout';
 import {
@@ -60,6 +61,11 @@ export default function Container({ children }: { children: ReactNode }) {
 						icon={<PenIcon className="h-6 w-6" />}
 						title={'Writings'}
 					/>
+					<NavItem
+						href="/music"
+						icon={<MusicIcon className="h-6 w-6" />}
+						title={'Music'}
+					/>
 					<CommandPaletteButton
 						icon={<CmdIcon className="h-5 w-5" />}
 						title={'Command Palette'}
@@ -71,12 +77,12 @@ export default function Container({ children }: { children: ReactNode }) {
 					<RedirectItem
 						href="https://twitter.com/gem8160"
 						icon={<TwitterIcon className="h-6 w-6" />}
-						title={'My Twitter'}
+						title={'Twitter'}
 					/>
 					<RedirectItem
 						href="https://github.com/Itsnotaka"
 						icon={<GithubIcon className="h-6 w-6" />}
-						title={'My Github'}
+						title={'Github'}
 					/>
 					<RedirectItem
 						href="mailto:kaka@kakaka.dev"
