@@ -7,3 +7,8 @@
 body {
     @apply bg-primary-100 dark:bg-primary-600 font-sans selection:bg-lightGreen-400 selection:text-black selection:dark:text-white selection:dark:bg-lightGreen-600;
 }
+
+@font-face {
+    font-family: "monoLisa";
+    src: url("/public/fonts/MonoLisa-Regular.otf");
+  }
