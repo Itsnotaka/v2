@@ -5,8 +5,8 @@ const Home: NextPage = () => (
 	<>
 		<title>Daniel Fu</title>
 		<Container>
-			<article className="prose dark:text-primary-250 prose-h1:dark:text-primary-250">
-				<h1>Garlic bread with cheese: What the science tells us</h1>
+			<article className="prose dark:text-primary-250 prose-h1:dark:text-primary-250 prose-h1:text-2xl">
+				<h1>Min Chun Fu</h1>
 				<p>
 					For years parents have espoused the health benefits of eating garlic
 					bread with cheese to their children, with the food earning such an
