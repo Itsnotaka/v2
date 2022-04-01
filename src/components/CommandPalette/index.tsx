@@ -1,42 +1,31 @@
-import { Dispatch, Fragment, SetStateAction, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Combobox, Dialog, Transition } from '@headlessui/react';
 import { SearchIcon } from '@heroicons/react/solid';
 import {
-	EmailIcon,
-	GithubIcon,
-	LightningIcon,
-	TwitterIcon,
-	SettingIcon,
-} from '../Icons';
-import Link from 'next/link';
-import { useTheme } from 'next-themes';
+	ExclamationIcon,
+	FolderIcon,
+	SupportIcon,
+} from '@heroicons/react/outline';
 
 const projects = [
-	{ id: 1, name: 'Home', url: '/' },
-	{ id: 2, name: 'About me', url: '/about' },
-	{ id: 3, name: 'Writings', url: '/writings' },
+	{
+		id: 1,
+		name: 'Workflow Inc. / Website Redesign',
+		category: 'Projects',
+		url: '#',
+	},
+	// More projects...
 ];
 
-const quickActions = [
+const users = [
 	{
-		name: 'Twitter',
-		icon: TwitterIcon,
-		shortcut: 'T',
-		url: 'https://twitter.com/gem8160',
+		id: 1,
+		name: 'Leslie Alexander',
+		url: '#',
+		imageUrl:
+			'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 	},
-	{
-		name: 'Github',
-		icon: GithubIcon,
-		shortcut: 'G',
-		url: 'https://github.com/Itsnotaka',
-	},
-	{
-		name: 'Email',
-		icon: EmailIcon,
-		shortcut: 'E',
-		url: 'mailto:kaka@kakaka.dev',
-	},
-	{ name: 'Toggle Theme', icon: SettingIcon, shortcut: 'S', url: '#' },
+	// More users...
 ];
 
 function classNames(...classes: (string | boolean)[]) {
@@ -48,36 +37,31 @@ export default function CommandPalette({
 	setIsOpen,
 }: {
 	isOpen: boolean;
-	setIsOpen: Dispatch<SetStateAction<boolean>>;
+	setIsOpen: () => void;
 }) {
-	const { resolvedTheme, setTheme } = useTheme();
-	const [mounted, setMounted] = useState(false);
+	const [rawQuery, setRawQuery] = useState('');
 
-	const [query, setQuery] = useState('');
+	const query = rawQuery.toLowerCase().replace(/^[#>]/, '');
 
 	const filteredProjects =
-		query === ''
+		rawQuery === '#'
+			? projects
+			: query === '' || rawQuery.startsWith('>')
 			? []
-			: projects.filter(project =>
-					project.name.toLowerCase().includes(query.toLowerCase()),
-			  );
+			: projects.filter(project => project.name.toLowerCase().includes(query));
 
-	const handleThemeChange = () => {
-		setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
-	};
-
-	// When mounted on client, now we can show the UI
-	useEffect(() => setMounted(true), []);
-
-	if (!mounted) {
-		return null;
-	}
+	const filteredUsers =
+		rawQuery === '>'
+			? users
+			: query === '' || rawQuery.startsWith('#')
+			? []
+			: users.filter(user => user.name.toLowerCase().includes(query));
 
 	return (
 		<Transition.Root
 			show={isOpen}
 			as={Fragment}
-			afterLeave={() => setQuery('')}
+			afterLeave={() => setRawQuery('')}
 		>
 			<Dialog
 				as="div"
@@ -93,7 +77,7 @@ export default function CommandPalette({
 					leaveFrom="opacity-100"
 					leaveTo="opacity-0"
 				>
-					<Dialog.Overlay className="fixed inset-0 backdrop-blur-sm transition-opacity" />
+					<Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity" />
 				</Transition.Child>
 
 				<Transition.Child
@@ -107,122 +91,56 @@ export default function CommandPalette({
 				>
 					<Combobox
 						as="div"
-						className="mx-auto max-w-2xl transform divide-y divide-gray-500 divide-opacity-10 overflow-hidden rounded-xl bg-white bg-opacity-80 shadow-2xl backdrop-blur backdrop-filter transition-all dark:bg-mirage-800"
+						className="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all"
 						// eslint-disable-next-line no-return-assign
 						onChange={(item: any) => (window.location = item.url)}
 						value
 					>
 						<div className="relative">
 							<SearchIcon
-								className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-900 text-opacity-40 dark:text-primary-275"
+								className="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400"
 								aria-hidden="true"
 							/>
 							<Combobox.Input
-								className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder-gray-500 outline-none focus:outline-none dark:text-primary-250 dark:placeholder-primary-275 sm:text-sm"
+								className="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 sm:text-sm"
 								placeholder="Search..."
-								onChange={event => setQuery(event.target.value)}
+								onChange={event => setRawQuery(event.target.value)}
 							/>
 						</div>
 
-						{(query === '' || filteredProjects.length > 0) && (
+						{(filteredProjects.length > 0 || filteredUsers.length > 0) && (
 							<Combobox.Options
 								static
-								className="max-h-80 scroll-py-2 divide-y divide-gray-500 divide-opacity-10 overflow-y-auto"
+								className="max-h-80 scroll-py-10 scroll-pb-2 space-y-4 overflow-y-auto p-4 pb-2"
 							>
-								<li className="p-2">
-									{query === '' && (
-										<h2 className="mt-4 mb-2 px-3 text-xs font-semibold text-gray-900 dark:text-primary-400">
-											Navigation
+								{filteredProjects.length > 0 && (
+									<li>
+										<h2 className="text-xs font-semibold text-gray-900">
+											Projects
 										</h2>
-									)}
-									<ul className="text-sm text-gray-700 dark:text-primary-250">
-										{(query === '' ? projects : filteredProjects).map(
-											project => (
+										<ul className="-mx-4 mt-2 text-sm text-gray-700">
+											{filteredProjects.map(project => (
 												<Combobox.Option
 													key={project.id}
 													value={project}
 													className={({ active }) =>
 														classNames(
-															'flex cursor-default select-none items-center rounded-md px-3 py-2',
-															active &&
-																'bg-gray-900 bg-opacity-5 text-gray-900 dark:bg-mirage-900',
+															'flex cursor-default select-none items-center px-4 py-2',
+															active && 'bg-indigo-600 text-white',
 														)
 													}
 												>
 													{({ active }) => (
 														<>
-															<LightningIcon
+															<FolderIcon
 																className={classNames(
-																	'h-6 w-6 flex-none text-gray-900 text-opacity-40 dark:text-primary-250',
-																	active && 'text-opacity-100',
+																	'h-6 w-6 flex-none',
+																	active ? 'text-white' : 'text-gray-400',
 																)}
 																aria-hidden="true"
 															/>
-															<Link href={project.url} passHref>
-																<span className="ml-3 flex-auto truncate dark:text-primary-250">
-																	{project.name}
-																</span>
-															</Link>
-															<span className="ml-3 box-border flex-none rounded bg-primary-400 px-2 py-1 text-xs font-semibold text-gray-500 shadow-md">
-																{project.id}
-															</span>
-															{active && (
-																<span className="ml-3 flex-none text-mirage-300">
-																	Jump to...
-																</span>
-															)}
-														</>
-													)}
-												</Combobox.Option>
-											),
-										)}
-									</ul>
-								</li>
-								{query === '' && (
-									<li className="p-2">
-										<h2 className="mt-4 mb-2 px-3 text-xs font-semibold text-gray-900 dark:text-primary-400">
-											Quick Actions
-										</h2>
-										<ul className="text-sm text-gray-700">
-											{quickActions.map(action => (
-												<Combobox.Option
-													key={action.shortcut}
-													value={action}
-													className={({ active }) =>
-														classNames(
-															'flex cursor-default select-none items-center rounded-md px-3 py-2',
-															active &&
-																'bg-gray-900 bg-opacity-5 text-gray-900 dark:bg-mirage-900',
-														)
-													}
-												>
-													{({ active }) => (
-														<>
-															<action.icon
-																className={classNames(
-																	'h-6 w-6 flex-none text-gray-900 text-opacity-40 dark:text-primary-250',
-																	active &&
-																		'text-opacity-100 dark:text-gray-900',
-																)}
-																aria-hidden="true"
-															/>
-															{action.name === 'Toggle Theme' ? (
-																<button
-																	onClick={() => handleThemeChange()}
-																	className="ml-3 flex-auto truncate text-left dark:text-primary-250"
-																>
-																	{action.name}
-																</button>
-															) : (
-																<span className="ml-3 flex-auto truncate dark:text-primary-250">
-																	{action.name}
-																</span>
-															)}
-															<span className="ml-3 flex-none text-xs font-semibold text-gray-500">
-																<kbd className="font-sans">⌘</kbd>
-																<kbd className="font-sans">
-																	{action.shortcut}
-																</kbd>
+															<span className="ml-3 flex-auto truncate">
+																{project.name}
 															</span>
 														</>
 													)}
@@ -231,21 +149,113 @@ export default function CommandPalette({
 										</ul>
 									</li>
 								)}
+								{filteredUsers.length > 0 && (
+									<li>
+										<h2 className="text-xs font-semibold text-gray-900">
+											Users
+										</h2>
+										<ul className="-mx-4 mt-2 text-sm text-gray-700">
+											{filteredUsers.map(user => (
+												<Combobox.Option
+													key={user.id}
+													value={user}
+													className={({ active }) =>
+														classNames(
+															'flex cursor-default select-none items-center px-4 py-2',
+															active && 'bg-indigo-600 text-white',
+														)
+													}
+												>
+													{/* eslint-disable-next-line @next/next/no-img-element */}
+													<img
+														src={user.imageUrl}
+														alt=""
+														className="h-6 w-6 flex-none rounded-full"
+													/>
+													<span className="ml-3 flex-auto truncate">
+														{user.name}
+													</span>
+												</Combobox.Option>
+											))}
+										</ul>
+									</li>
+								)}
 							</Combobox.Options>
 						)}
 
-						{query !== '' && filteredProjects.length === 0 && (
-							<div className="py-14 px-6 text-center sm:px-14">
-								{/* <FolderIcon
-									className="mx-auto h-6 w-6 text-gray-900 text-opacity-40"
+						{rawQuery === '?' && (
+							<div className="py-14 px-6 text-center text-sm sm:px-14">
+								<SupportIcon
+									className="mx-auto h-6 w-6 text-gray-400"
 									aria-hidden="true"
 								/>
-								<p className="mt-4 text-sm text-gray-900">
-									We couldn't find any projects with that term. Please try
-									again.
-								</p> */}
+								<p className="mt-4 font-semibold text-gray-900">
+									Help with searching
+								</p>
+								<p className="mt-2 text-gray-500">
+									Use this tool to quickly search for users and projects across
+									our entire platform. You can also use the search modifiers
+									found in the footer below to limit the results to just users
+									or projects.
+								</p>
 							</div>
 						)}
+
+						{query !== '' &&
+							rawQuery !== '?' &&
+							filteredProjects.length === 0 &&
+							filteredUsers.length === 0 && (
+								<div className="py-14 px-6 text-center text-sm sm:px-14">
+									<ExclamationIcon
+										className="mx-auto h-6 w-6 text-gray-400"
+										aria-hidden="true"
+									/>
+									<p className="mt-4 font-semibold text-gray-900">
+										No results found
+									</p>
+									<p className="mt-2 text-gray-500">
+										We couldn’t find anything with that term. Please try again.
+									</p>
+								</div>
+							)}
+
+						<div className="flex flex-wrap items-center bg-gray-50 py-2.5 px-4 text-xs text-gray-700">
+							Type{' '}
+							<kbd
+								className={classNames(
+									'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2',
+									rawQuery.startsWith('#')
+										? 'border-indigo-600 text-indigo-600'
+										: 'border-gray-400 text-gray-900',
+								)}
+							>
+								#
+							</kbd>{' '}
+							<span className="sm:hidden">for projects,</span>
+							<span className="hidden sm:inline">to access projects,</span>
+							<kbd
+								className={classNames(
+									'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2',
+									rawQuery.startsWith('>')
+										? 'border-indigo-600 text-indigo-600'
+										: 'border-gray-400 text-gray-900',
+								)}
+							>
+								&gt;
+							</kbd>{' '}
+							for users, and{' '}
+							<kbd
+								className={classNames(
+									'mx-1 flex h-5 w-5 items-center justify-center rounded border bg-white font-semibold sm:mx-2',
+									rawQuery === '?'
+										? 'border-indigo-600 text-indigo-600'
+										: 'border-gray-400 text-gray-900',
+								)}
+							>
+								?
+							</kbd>{' '}
+							for help.
+						</div>
 					</Combobox>
 				</Transition.Child>
 			</Dialog>
