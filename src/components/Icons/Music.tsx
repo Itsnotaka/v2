@@ -6,7 +6,7 @@ export default function MusicIcon({ className }: { className?: string }) {
 			viewBox="0 0 24 24"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-            className={className}
+			className={className}
 		>
 			<path
 				d="M20 3.99666C20 2.71717 18.8152 1.76673 17.5661 2.04429L10.5661 3.59984C9.65106 3.80319 9 4.61482 9 5.55222V18.5C9 19.0523 9.44772 19.5 10 19.5C10.5523 19.5 11 19.0523 11 18.5V9.80221L18 8.24665V16.5C18 17.0523 18.4477 17.5 19 17.5C19.5523 17.5 20 17.0523 20 16.5V3.99666Z"

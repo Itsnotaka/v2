@@ -23,5 +23,5 @@ export {
 	CmdIcon,
 	LightningIcon,
 	SettingIcon,
-	MusicIcon
+	MusicIcon,
 };
