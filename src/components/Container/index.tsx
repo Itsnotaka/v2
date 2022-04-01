@@ -9,6 +9,7 @@ import {
 	PenIcon,
 	CmdIcon,
 	MusicIcon,
+	GiftIcon,
 } from '../Icons';
 import Layout from '../Layout';
 import {
@@ -65,6 +66,11 @@ export default function Container({ children }: { children: ReactNode }) {
 						href="/music"
 						icon={<MusicIcon className="h-6 w-6" />}
 						title={'Music'}
+					/>
+					<NavItem
+						href="/goods"
+						icon={<GiftIcon className="h-6 w-6" />}
+						title={'Goods'}
 					/>
 					{/* <CommandPaletteButton
 						icon={<CmdIcon className="h-5 w-5" />}
