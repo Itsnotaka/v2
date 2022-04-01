@@ -39,7 +39,7 @@ export default function Container({ children }: { children: ReactNode }) {
 
 	return (
 		<>
-			<CommandPalette isOpen={isOpen} setIsOpen={setIsOpen} />
+			{/* <CommandPalette isOpen={isOpen} setIsOpen={setIsOpen} /> */}
 			<Layout>
 				{children}
 
@@ -66,13 +66,13 @@ export default function Container({ children }: { children: ReactNode }) {
 						icon={<MusicIcon className="h-6 w-6" />}
 						title={'Music'}
 					/>
-					<CommandPaletteButton
+					{/* <CommandPaletteButton
 						icon={<CmdIcon className="h-5 w-5" />}
 						title={'Command Palette'}
 						onClick={() => {
 							setIsOpen(true);
 						}}
-					/>
+					/> */}
 					<Separator />
 					<RedirectItem
 						href="https://twitter.com/gem8160"
