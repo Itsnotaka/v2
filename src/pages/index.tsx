@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 		<>
 			<title>Daniel Fu</title>
 			<Container>
-				<article className="prose prose-h1:text-2xl dark:text-primary-250 prose-h1:dark:text-primary-250">
+				<article className="prose prose-h1:text-2xl prose-h1:font-semibold dark:text-primary-250 prose-h1:dark:text-primary-250">
 					<h1 className="font-[monolisa]">Min Chun Fu</h1>
 					<p className="flex whitespace-pre-wrap align-bottom">
 						— A{' '}
@@ -36,7 +36,15 @@ const Home: NextPage = () => {
 						</Typist>{' '}
 						from Taiwan.
 					</p>
-					<hr className="mt-3 h-[1px] w-12" />
+					<hr className="mt-3 mb-0 h-[1px] w-12" />
+					<p className="mt-3 text-base font-semibold whitespace-wrap">
+						Favorite Quote
+						<p className="font-[monolisa] mt-2 font-light">
+							<span className="text-blue-600">“</span>Think about why obvious
+							questions are obvious, that makes you understand how to solve
+							complex problems.
+						</p>
+					</p>
 				</article>
 			</Container>
 		</>
