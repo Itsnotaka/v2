@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 		// creating a timer to rotate the text every 3 seconds
 		const timer = setInterval(() => {
 			setCurrentTextCounter((currentTextCounter + 1) % texts.length);
-		}, 5000);
+		}, 3000);
 
 		return () => clearInterval(timer);
 	}, [currentTextCounter, texts.length]);
