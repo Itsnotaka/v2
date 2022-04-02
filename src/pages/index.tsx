@@ -4,7 +4,7 @@ import Container from '../components/Container';
 import Typist from 'react-typist';
 
 const Home: NextPage = () => {
-	const texts = ['student', 'developer', 'designer'];
+	const texts = [' student ', ' developer ', ' designer '];
 	const [currentTextCounter, setCurrentTextCounter] = useState(0);
 
 	useEffect(() => {
@@ -23,23 +23,22 @@ const Home: NextPage = () => {
 				<article className="prose prose-h1:text-2xl prose-h1:font-bold dark:text-primary-250 prose-h1:dark:text-primary-250">
 					<h1 className="font-mono">Min Chun Fu</h1>
 					<p className="flex whitespace-pre-wrap">
-						— A{' '}
+						— A
 						<Typist
+							cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}
 							className={`${
-								texts[currentTextCounter] === 'developer'
-									? 'font-mono'
-									: ''
+								texts[currentTextCounter] === 'developer' ? 'font-mono' : ''
 							}`}
 							key={currentTextCounter}
 						>
 							{texts[currentTextCounter]}
-						</Typist>{' '}
+						</Typist>
 						from Taiwan.
 					</p>
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
 					<p className="whitespace-wrap mt-3 text-base font-bold">
-						Favorite Quote
-						<p className="mt-2 font-normal font-mono text-sm">
+						My Favorite Quote
+						<p className="mt-2 font-mono text-sm font-normal">
 							<span className="text-blue-600">“</span>Think about why obvious
 							questions are obvious, that makes you understand how to solve
 							complex problems.<span className="text-blue-600">”</span>
