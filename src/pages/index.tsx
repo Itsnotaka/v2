@@ -27,7 +27,7 @@ const Home: NextPage = () => {
 						<Typist
 							cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}
 							className={`${
-								texts[currentTextCounter] === 'developer' ? 'font-mono' : ''
+								texts[currentTextCounter] === ' developer ' ? 'font-mono' : ''
 							}`}
 							key={currentTextCounter}
 						>
