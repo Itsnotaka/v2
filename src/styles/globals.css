@@ -10,7 +10,7 @@ body {
 
 @font-face {
     font-family: "monoLisa";
-    src: url("/public/fonts/MonoLisa-Regular.otf");
+    src: url("/public/fonts/MonoLisa-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,7 +18,7 @@ body {
 
 @font-face {
     font-family: "monoLisa";
-    src: url("/public/fonts/MonoLisa-Bold.otf");
+    src: url("/public/fonts/MonoLisa-Bold.otf") format("opentype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
