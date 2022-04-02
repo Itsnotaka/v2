@@ -37,9 +37,9 @@ const Home: NextPage = () => {
 						from Taiwan.
 					</p>
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
-					<p className="mt-3 text-base font-semibold whitespace-wrap">
+					<p className="whitespace-wrap mt-3 text-base font-semibold">
 						Favorite Quote
-						<p className="font-mono mt-2 font-light">
+						<p className="mt-2 font-mono font-light">
 							<span className="text-blue-600">“</span>Think about why obvious
 							questions are obvious, that makes you understand how to solve
 							complex problems.
