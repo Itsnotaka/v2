@@ -15,16 +15,13 @@ export default function NavItem({
 		<Tooltip title={title}>
 			<div>
 				<Link href={href} passHref scroll={false}>
-					<button
+					<a
 						className={
 							'flex h-12 w-12 shrink-0 transform-none cursor-pointer items-center justify-center rounded-[23%] bg-primary-300 text-center text-black shadow-lg outline-none focus:outline-none dark:bg-primary-500 dark:bg-opacity-50 dark:text-primary-275'
 						}
-						onClick={e => {
-							e.preventDefault();
-						}}
 					>
 						{icon}
-					</button>
+					</a>
 				</Link>
 			</div>
 		</Tooltip>
