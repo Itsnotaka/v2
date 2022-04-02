@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import Container from '../components/Container';
 import Typist from 'react-typist';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
 	const texts = [' student ', ' developer ', ' designer '];
@@ -18,7 +19,10 @@ const Home: NextPage = () => {
 
 	return (
 		<>
-			<title>Daniel Fu</title>
+			<Head>
+				<title>Daniel Fu</title>
+			</Head>
+
 			<Container>
 				<article className="prose prose-h1:text-2xl prose-h1:font-bold dark:text-primary-250 prose-h1:dark:text-primary-250">
 					<h1 className="font-mono">Min Chun Fu</h1>
