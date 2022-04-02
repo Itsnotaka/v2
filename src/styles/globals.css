@@ -10,32 +10,5 @@ body {
 
 @font-face {
 	font-family: 'monoLisa';
-	src: url('/public/fonts/MonoLisa-Regular.otf') format('opentype');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'monoLisa';
-	src: url('/public/fonts/MonoLisa-Bold.otf') format('opentype');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'monoLisa';
-	src: url('/public/fonts/MonoLisa-Regular.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: 'monoLisa';
-	src: url('/public/fonts/MonoLisa-Bold.ttf') format('truetype');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+	src: url('/public/fonts/MonoLisa-Regular.otf');
 }
