@@ -37,7 +37,14 @@ const Home: NextPage = () => {
 						>
 							{texts[currentTextCounter]}
 						</Typist>
-						from Taiwan.
+						from Taiwan.{' '}
+						<span>
+							Majoring in{' '}
+							<span className="font-semibold underline underline-offset-1">
+								Economics
+							</span>{' '}
+							and <span className="font-semibold underline">Finance</span>.
+						</span>
 					</p>
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
 					<p className="whitespace-wrap mt-3 text-base font-bold">
@@ -47,6 +54,26 @@ const Home: NextPage = () => {
 							questions are obvious, that makes you understand how to solve
 							complex problems.<span className="text-blue-600">”</span>
 						</p>
+					</p>
+					<p className="text-sm">
+						Building digital productivity tool at{' '}
+						<span className="font-mono font-semibold underline underline-offset-1">
+							Flow.
+						</span>
+					</p>
+					<p className="text-sm">
+						Founder & CEO{' '}
+						<span className="font-semibold underline underline-offset-1">
+							@<span className="font-mono">Codex Technology</span>
+						</span>{' '}
+						(acq.{' '}
+						<span className="font-semibold">
+							@
+							<span className="font-mono underline underline-offset-1">
+								SFV Capital
+							</span>
+						</span>
+						).
 					</p>
 				</article>
 			</Container>
