@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react';
-import CommandPalette from '../CommandPalette';
+// import CommandPalette from '../CommandPalette';
 import {
 	HomeIcon,
 	TwitterIcon,
@@ -7,7 +7,7 @@ import {
 	EmailIcon,
 	MonitorIcon,
 	PenIcon,
-	CmdIcon,
+	// CmdIcon,
 	MusicIcon,
 	GiftIcon,
 } from '../Icons';
@@ -19,7 +19,7 @@ import {
 	NavItem,
 	RedirectItem,
 	ThemeChanger,
-	CommandPaletteButton,
+	// CommandPaletteButton,
 } from '../Nav';
 
 export default function Container({ children }: { children: ReactNode }) {
