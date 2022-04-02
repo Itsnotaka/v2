@@ -2,11 +2,11 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Container from '../components/Container';
 
-const Writings: NextPage = () => {
+const Setups: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Writings — Daniel Fu</title>
+				<title>Setups — Daniel Fu</title>
 			</Head>
 			<Container>
 				<div>hi</div>
@@ -15,4 +15,4 @@ const Writings: NextPage = () => {
 	);
 };
 
-export default Writings;
+export default Setups;

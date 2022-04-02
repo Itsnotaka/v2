@@ -44,5 +44,6 @@ module.exports = {
 		'no-mixed-spaces-and-tabs': 'off',
 		'no-unused-vars':'warn',
 		'capitalized-comments': 'off',
+		'arrow-body-style':'warn',
 	},
 };
