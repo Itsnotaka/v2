@@ -11,9 +11,5 @@ body {
 @font-face {
 	font-family: 'monoLisa';
 	src: url('../../public/fonts/MonoLisa-Regular.otf');
-}
-
-@font-face {
-	font-family: 'monoLisa';
 	src: url('../../public/fonts/MonoLisa-Bold.otf');
 }
