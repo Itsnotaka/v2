@@ -22,12 +22,12 @@ const Home: NextPage = () => {
 			<Container>
 				<article className="prose prose-h1:text-2xl prose-h1:font-semibold dark:text-primary-250 prose-h1:dark:text-primary-250">
 					<h1 className="font-mono">Min Chun Fu</h1>
-					<p className="flex whitespace-pre-wrap align-bottom">
+					<p className="flex whitespace-pre-wrap">
 						— A{' '}
 						<Typist
 							className={`${
 								texts[currentTextCounter] === 'developer'
-									? 'font-[monolisa]'
+									? 'font-mono'
 									: ''
 							}`}
 							key={currentTextCounter}
@@ -39,10 +39,10 @@ const Home: NextPage = () => {
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
 					<p className="whitespace-wrap mt-3 text-base font-semibold">
 						Favorite Quote
-						<p className="mt-2 font-mono font-light">
+						<p className="mt-2 font-light font-mono text-sm">
 							<span className="text-blue-600">“</span>Think about why obvious
 							questions are obvious, that makes you understand how to solve
-							complex problems.
+							complex problems.<span className="text-blue-600">”</span>
 						</p>
 					</p>
 				</article>

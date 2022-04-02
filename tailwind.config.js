@@ -50,7 +50,6 @@ module.exports = {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				mono: ['monoLisa']
 			},
 			keyframes: {
 				wiggle: {
