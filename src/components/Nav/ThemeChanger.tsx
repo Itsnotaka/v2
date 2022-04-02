@@ -21,10 +21,11 @@ export default function ThemeChanger() {
 	return (
 		<Tooltip title={'Switch Theme'}>
 			<button
-				onClick={() => {
+				onClick={e => {
+					e.preventDefault();
 					handleThemeChange();
 				}}
-				className="outline-none focus:outline-none flex h-12 w-12 shrink-0 transform-none cursor-pointer items-center justify-center rounded-[23%] bg-primary-300 text-center text-black shadow-lg dark:bg-primary-500 dark:bg-opacity-50 dark:text-primary-400"
+				className="flex h-12 w-12 shrink-0 transform-none cursor-pointer items-center justify-center rounded-[23%] bg-primary-300 text-center text-black shadow-lg outline-none focus:outline-none dark:bg-primary-500 dark:bg-opacity-50 dark:text-primary-400"
 			>
 				{resolvedTheme === 'light' ? (
 					<MoonIcon className="h-6 w-6 rotate-45" />
