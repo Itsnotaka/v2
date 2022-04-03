@@ -11,6 +11,7 @@ import LightningIcon from './Lightning';
 import SettingIcon from './Setting';
 import MusicIcon from './Music';
 import GiftIcon from './Gift';
+import SpotifyIcon from './Spotify';
 
 export {
 	HomeIcon,
@@ -26,4 +27,5 @@ export {
 	SettingIcon,
 	MusicIcon,
 	GiftIcon,
+	SpotifyIcon,
 };
