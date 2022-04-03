@@ -50,9 +50,9 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 							<th>Album</th>
 						</tr>
 						<tr>
-							<td>{tracks.recenttracks.track[1].name}</td>
-							<td>{tracks.recenttracks.track[1].artist['#text']}</td>
-							<td>{tracks.recenttracks.track[1].album['#text']}</td>
+							<td>{tracks?.recenttracks.track[1].name}</td>
+							<td>{tracks?.recenttracks.track[1].artist['#text']}</td>
+							<td>{tracks?.recenttracks.track[1].album['#text']}</td>
 						</tr>
 					</table>
 					<hr />
@@ -64,8 +64,8 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 							<th>Album</th>
 						</tr>
 						{/* We only want to display the songs that are not currently playing and is not the last played, so given an array of 10 songs, we are displaying 8 songs below */}
-						{tracks.recenttracks.track.slice(2, 10).map(track => (
-							<tr key={track.mbid} className="text-left items-baseline w-auto">
+						{tracks?.recenttracks.track.slice(2, 10).map(track => (
+							<tr key={track.mbid} className="w-auto items-baseline text-left">
 								<td>{track.name}</td>
 								<td>{track.artist['#text']}</td>
 								<td>{track.album['#text']}</td>
