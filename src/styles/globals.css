@@ -7,4 +7,3 @@
 body {
 	@apply bg-primary-100 font-sans selection:bg-lightGreen-400 selection:text-black dark:bg-primary-600 selection:dark:bg-lightGreen-600 selection:dark:text-white;
 }
-
