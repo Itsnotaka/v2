@@ -46,7 +46,7 @@ export default function Container({ children }: { children: ReactNode }) {
 
 				<Nav>
 					{/* <SpecialButton href={''} title={'Flow'} /> */}
-					<Separator />
+					{/* <Separator /> */}
 					<NavItem
 						href="/"
 						icon={<HomeIcon className="h-6 w-6" />}
