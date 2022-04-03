@@ -279,7 +279,7 @@ const Setups: NextPage = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								Air Buddy (better Airpod control)
+								Air Buddy (Better Airpod control)
 							</a>
 						</li>
 						<li>
