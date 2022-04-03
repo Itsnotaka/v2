@@ -9,3 +9,4 @@ The websites inspiration is from:
 
 - <https://rauno.me/>
 - <https://godly.website/>
+- <https://goods.wtf/>
