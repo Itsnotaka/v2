@@ -4,6 +4,7 @@ import { SpotifyIcon } from '../components/Icons';
 import { useLastFM } from 'use-last-fm';
 import { useEffect, useState } from 'react';
 import { Tracks } from '../../types';
+import Image from 'next/image';
 
 const Music = ({ tracks }: { tracks: Tracks }) => {
 	const lastFM = useLastFM(
@@ -27,13 +28,16 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 			<Container>
 				<article className="prose-p:whitespace-wrap prose items-center justify-center pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
 					{lastFM.status === 'playing' && (
-						<h1 className="whitespace-wrap mx-auto flex items-center gap-x-2 text-left">
-							<SpotifyIcon className="h-8 w-8" /> Listening to
-							<a href={lastFM.song.url} className="underline-offset-4">
-								{lastFM.song.name}
-							</a>{' '}
-							by {lastFM.song.artist}
-						</h1>
+						<>
+							<h1 className="whitespace-wrap mx-auto flex items-center gap-x-2 text-left">
+								<SpotifyIcon className="h-8 w-8" /> Listening to
+								<a href={lastFM.song.url} className="underline-offset-4">
+									{lastFM.song.name}
+								</a>{' '}
+								by {lastFM.song.artist}
+							</h1>
+							<Image src={lastFM.song.art} alt="album art" height={192} width={192} />
+						</>
 					)}
 					{lastFM.status !== 'playing' && (
 						<h1 className="flex items-center gap-x-2">
@@ -43,6 +47,7 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 					)}
 					<hr />
 					<h1>Last Played</h1>
+					<Image src={tracks?.recenttracks.track[1].image[3]['#text']} alt="album art" height={192} width={192} />
 					<table>
 						<tr>
 							<th>Title</th>
