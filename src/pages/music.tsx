@@ -84,12 +84,12 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 					{lastFM.status !== 'playing' && (
 						<h1 className="flex items-center gap-x-2">
 							<SpotifyIcon className="h-12 w-12" />
-							Currently Not Listening to anything
+							Currently not listening to anything
 						</h1>
 					)}
 					<hr />
 					<h1>
-						Last Played is{' '}
+						Last played is{' '}
 						<a
 							href={tracks.recenttracks.track[1].url}
 							className="underline-offset-4"
