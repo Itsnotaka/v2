@@ -42,8 +42,9 @@ module.exports = {
 		'object-curly-spacing': 'off',
 		'indent': 'off',
 		'no-mixed-spaces-and-tabs': 'off',
-		'no-unused-vars':'warn',
+		'no-unused-vars': 'warn',
 		'capitalized-comments': 'off',
-		'arrow-body-style':'warn',
+		'arrow-body-style': 'warn',
+		'curly': 'off',
 	},
 };
