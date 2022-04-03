@@ -66,7 +66,11 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 						{/* We only want to display the songs that are not currently playing and is not the last played, so given an array of 10 songs, we are displaying 8 songs below */}
 						{tracks?.recenttracks.track.slice(2, 10).map(track => (
 							<tr key={track.mbid} className="w-auto items-baseline text-left">
-								<td>{track.name}</td>
+								<td>
+									<a href={track.url} target="_blank" rel="noreferrer">
+										{track.name}
+									</a>
+								</td>
 								<td>{track.artist['#text']}</td>
 								<td>{track.album['#text']}</td>
 							</tr>
