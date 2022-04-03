@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Container from '../components/Container';
 import { SpotifyIcon } from '../components/Icons';
 import { useLastFM } from 'use-last-fm';
-import Image from 'next/image';
 
 const Music: NextPage = () => {
 	const lastFM = useLastFM('akatheowner', 'e620fa8f0a26f158eec3ba8ed724c457');
@@ -27,11 +26,11 @@ const Music: NextPage = () => {
 					{lastFM.status !== 'playing' && (
 						<h1 className="flex items-center gap-x-2">
 							<SpotifyIcon className="h-12 w-12" />
-							Currently Offline
+							Currently Not Listening to anything
 						</h1>
 					)}
 					<hr />
-					
+
 				</article>
 			</Container>
 		</>

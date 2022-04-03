@@ -2,8 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Container from '../components/Container';
 
-const Writings: NextPage = () => {
-	return (
+const Writings: NextPage = () => (
 		<>
 			<Head>
 				<title>Writings — Daniel Fu</title>
@@ -13,6 +12,5 @@ const Writings: NextPage = () => {
 			</Container>
 		</>
 	);
-};
 
 export default Writings;
