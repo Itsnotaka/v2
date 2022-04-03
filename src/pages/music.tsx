@@ -6,7 +6,7 @@ const Music: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Music — Daniel Fu</title>
+				<title>Music - Daniel Fu</title>
 			</Head>
 			<Container>
 				<div>hi</div>
