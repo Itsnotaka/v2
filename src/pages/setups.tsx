@@ -1,9 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import React, { useRef } from 'react';
 import Container from '../components/Container';
 
-// eslint-disable-next-line arrow-body-style
 const Setups: NextPage = () => {
+	const RaycastRef = useRef<HTMLAnchorElement>(null);
+
+	const executeScroll = () => RaycastRef.current?.scrollIntoView();
+
 	return (
 		<>
 			<Head>
@@ -48,7 +52,16 @@ const Setups: NextPage = () => {
 					</ul>
 					<p>Spotlight</p>
 					<ul>
-						<li>disable since I use Raycast.</li>
+						<li>
+							disable since I use{' '}
+							<span
+								onClick={executeScroll}
+								className="cursor-pointer font-bold underline underline-offset-1"
+							>
+								Raycast
+							</span>
+							.
+						</li>
 					</ul>
 					<p>Mission Control</p>
 					<ul>
@@ -67,13 +80,13 @@ const Setups: NextPage = () => {
 					</ul>
 					<p>For terminal (Make sure all file sharing is disabled)</p>
 					<pre>
-						<code>sudo scutil --set ComputerName "newname"</code>
+						<code>sudo scutil --set ComputerName "newName"</code>
 					</pre>
 					<pre>
-						<code>sudo scutil --set LocalHostName "newname"</code>
+						<code>sudo scutil --set LocalHostName "newName"</code>
 					</pre>
 					<pre>
-						<code>sudo scutil --set HostName "newname"</code>
+						<code>sudo scutil --set HostName "newName"</code>
 					</pre>
 					<p>Security and privacy</p>
 					<ul>
@@ -237,6 +250,7 @@ const Setups: NextPage = () => {
 								href="https://www.raycast.com/"
 								target="_blank"
 								rel="noreferrer"
+								ref={RaycastRef}
 							>
 								Raycast (Better Spotlight)
 							</a>
