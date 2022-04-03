@@ -60,5 +60,5 @@ module.exports = {
 			animation: { wiggle: 'wiggle 200ms ease-in-out' },
 		},
 	},
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [require('@tailwindcss/typography'),require('@tailwindcss/aspect-ratio'),],
 };
