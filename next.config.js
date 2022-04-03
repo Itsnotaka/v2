@@ -5,6 +5,10 @@ const nextConfig = {
 	images: {
 		formats: ['image/webp'],
 	},
+	env: {
+		LASTFM_CLIENT_ID: process.env.LASTFM_CLIENT_ID,
+		LASTFM_CLIENT_TOKEN: process.env.LASTFM_CLIENT_TOKEN,
+	  }
 };
 
 module.exports = nextConfig;
