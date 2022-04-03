@@ -14,8 +14,45 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 
 	const [mounted, setMounted] = useState(false);
 
+	// const [lastPlayedTime, setLastPlayedTime] = useState('');
+
 	useEffect(() => {
 		setMounted(true);
+
+		// const calculateLastPlayed = (time: string | number | Date) => {
+		// 	const now = new Date();
+		// 	const lastPlayed = new Date(time);
+		// 	const diff = now.getTime() - lastPlayed.getTime();
+		// 	const diffMinutes = Math.round(diff / 60000);
+		// 	const diffHours = Math.round(diff / 3600000);
+		// 	const diffDays = Math.round(diff / 86400000);
+
+		// 	if (diffMinutes < 1) {
+		// 		return 'Just now';
+		// 	}
+
+		// 	if (diffHours < 1) {
+		// 		return `${diffMinutes} minutes ago`;
+		// 	}
+
+		// 	if (diffDays < 1) {
+		// 		return `${diffHours} hours ago`;
+		// 	}
+
+		// 	return `${diffDays} days ago`;
+		// };
+
+		// // we want to calculate once when loaded and then calculate every 5 seconds
+		// const interval = setInterval(() => {
+		// 	if (tracks?.recenttracks.track.length > 0) {
+		// 		const lastPlayed: string = calculateLastPlayed(
+		// 			tracks.recenttracks.track[1]?.date['#text'],
+		// 		);
+		// 		setLastPlayedTime(lastPlayed);
+		// 	}
+		// }, 5000);
+
+		// return () => clearInterval(interval);
 	}, []);
 
 	if (!mounted) return null;
@@ -36,7 +73,12 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 								</a>{' '}
 								by {lastFM.song.artist}
 							</h1>
-							<Image src={lastFM.song.art} alt="album art" height={192} width={192} />
+							<Image
+								src={lastFM.song.art}
+								alt="album art"
+								height={192}
+								width={192}
+							/>
 						</>
 					)}
 					{lastFM.status !== 'playing' && (
@@ -46,40 +88,63 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 						</h1>
 					)}
 					<hr />
-					<h1>Last Played</h1>
-					<Image src={tracks?.recenttracks.track[1].image[3]['#text']} alt="album art" height={192} width={192} />
+					<h1>
+						Last Played
+						{/* <span> - {lastPlayedTime}</span> */}
+					</h1>
+					<Image
+						src={tracks?.recenttracks.track[1].image[3]['#text']}
+						alt="album art"
+						height={192}
+						width={192}
+					/>
 					<table>
-						<tr>
-							<th>Title</th>
-							<th>Artist</th>
-							<th>Album</th>
-						</tr>
-						<tr>
-							<td>{tracks?.recenttracks.track[1].name}</td>
-							<td>{tracks?.recenttracks.track[1].artist['#text']}</td>
-							<td>{tracks?.recenttracks.track[1].album['#text']}</td>
-						</tr>
+						<thead className="border-0">
+							<tr>
+								<th className="dark:text-primary-250">Title</th>
+								<th className="dark:text-primary-250">Artist</th>
+								<th className="dark:text-primary-250">Album</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<a href={tracks?.recenttracks.track[1].url}>
+										{tracks?.recenttracks.track[1].name}
+									</a>
+								</td>
+								<td>{tracks?.recenttracks.track[1].artist['#text']}</td>
+								<td>{tracks?.recenttracks.track[1].album['#text']}</td>
+							</tr>
+						</tbody>
 					</table>
 					<hr />
 					<h1>Recently Played</h1>
 					<table>
-						<tr>
-							<th>Title</th>
-							<th>Artist</th>
-							<th>Album</th>
-						</tr>
-						{/* We only want to display the songs that are not currently playing and is not the last played, so given an array of 10 songs, we are displaying 8 songs below */}
-						{tracks?.recenttracks.track.slice(2, 10).map(track => (
-							<tr key={track.mbid} className="w-auto items-baseline text-left">
-								<td>
-									<a href={track.url} target="_blank" rel="noreferrer">
-										{track.name}
-									</a>
-								</td>
-								<td>{track.artist['#text']}</td>
-								<td>{track.album['#text']}</td>
+						<thead className="border-0">
+							<tr>
+								<th className="dark:text-primary-250">Title</th>
+								<th className="dark:text-primary-250">Artist</th>
+								<th className="dark:text-primary-250">Album</th>
 							</tr>
-						))}
+						</thead>
+						<tbody>
+							{/* We only want to display the songs that are not currently playing and is not the last played, so given an array of 10 songs, we are displaying 8 songs below */}
+							{tracks?.recenttracks.track.slice(2, 10).map(track => (
+								<tr
+									key={track.date.uts}
+									className="w-auto items-baseline border-0 text-left"
+								>
+									<td>
+										<a href={track.url} target="_blank" rel="noreferrer">
+											{track.name}
+										</a>
+									</td>
+									<td>{track.artist['#text']}</td>
+									<td>{track.album['#text']}</td>
+								</tr>
+							))}
+						</tbody>
 					</table>
 				</article>
 			</Container>
