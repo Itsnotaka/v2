@@ -89,7 +89,14 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 					)}
 					<hr />
 					<h1>
-						Last Played
+						Last Played is{' '}
+						<a
+							href={tracks.recenttracks.track[1].url}
+							className="underline-offset-4"
+						>
+							{tracks.recenttracks.track[1].name}
+						</a>{' '}
+						by {tracks.recenttracks.track[1].artist['#text']}
 						{/* <span> - {lastPlayedTime}</span> */}
 					</h1>
 					<Image
@@ -98,26 +105,7 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 						height={192}
 						width={192}
 					/>
-					<table>
-						<thead className="border-0">
-							<tr>
-								<th className="dark:text-primary-250">Title</th>
-								<th className="dark:text-primary-250">Artist</th>
-								<th className="dark:text-primary-250">Album</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									<a href={tracks?.recenttracks.track[1].url}>
-										{tracks?.recenttracks.track[1].name}
-									</a>
-								</td>
-								<td>{tracks?.recenttracks.track[1].artist['#text']}</td>
-								<td>{tracks?.recenttracks.track[1].album['#text']}</td>
-							</tr>
-						</tbody>
-					</table>
+
 					<hr />
 					<h1>Recently Played</h1>
 					<table>
