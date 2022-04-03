@@ -26,26 +26,26 @@ const Home: NextPage = () => {
 			<Container>
 				<article className="prose prose-h1:text-2xl prose-h1:font-bold dark:text-primary-250 prose-h1:dark:text-primary-250">
 					<h1 className="font-mono">Min Chun Fu</h1>
-					<p className="flex whitespace-pre-wrap">
-						— A
-						<Typist
-							cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}
-							className={`${
-								texts[currentTextCounter] === ' developer ' ? 'font-mono' : ''
-							}`}
-							key={currentTextCounter}
-						>
-							{texts[currentTextCounter]}
-						</Typist>
-						from Taiwan.{' '}
-						<span>
-							Majoring in{' '}
-							<span className="font-semibold underline underline-offset-1">
-								Economics
-							</span>{' '}
-							and <span className="font-semibold underline">Finance</span>.
-						</span>
-					</p>
+					<div className="gap-y-1">
+						<p className="flex whitespace-pre-wrap">
+							— A
+							<Typist
+								cursor={{ hideWhenDone: true, hideWhenDoneDelay: 200 }}
+								className={`${
+									texts[currentTextCounter] === ' developer ' ? 'font-mono' : ''
+								}`}
+								key={currentTextCounter}
+							>
+								{texts[currentTextCounter]}
+							</Typist>
+							from Taiwan.{'\n'}
+						</p>
+						<p>
+							Majoring in <span className="font-semibold">Economics</span> and{' '}
+							<span className="font-semibold">Finance</span>.
+						</p>
+					</div>
+
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
 					<p className="whitespace-wrap mt-3 text-base font-bold">
 						My Favorite Quote
