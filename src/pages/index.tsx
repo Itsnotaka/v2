@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 			</Head>
 
 			<Container>
-				<article className="prose prose-h1:text-2xl prose-h1:font-bold dark:text-primary-250 prose-h1:dark:text-primary-25 pb-10">
+				<article className="prose prose-h1:text-2xl prose-h1:font-bold dark:text-primary-250 prose-h1:dark:text-primary-250 pb-10">
 					<h1 className="font-mono">Min Chun Fu</h1>
 					<div className="gap-y-1">
 						<p className="flex whitespace-pre-wrap">
