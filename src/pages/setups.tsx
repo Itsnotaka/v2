@@ -5,6 +5,7 @@ import Container from '../components/Container';
 
 const Setups: NextPage = () => {
 	const [mounted, setMounted] = useState(false);
+	const [computerName, setComputerName] = useState('newName');
 	const RaycastRef = useRef<HTMLAnchorElement>(null);
 
 	const executeScroll = () => RaycastRef.current?.scrollIntoView();
@@ -86,14 +87,19 @@ const Setups: NextPage = () => {
 						<li>"Change computer name".</li>
 					</ul>
 					<p>For terminal (Make sure all file sharing is disabled)</p>
+					<input
+						placeholder="computer name"
+						className="cursor-text rounded-[4px] border border-primary-250 p-2 font-mono text-sm font-medium shadow-md"
+						onChange={e => setComputerName(e.target.value)}
+					/>
 					<pre>
-						<code>sudo scutil --set ComputerName "newName"</code>
+						<code>sudo scutil --set ComputerName {computerName}</code>
 					</pre>
 					<pre>
-						<code>sudo scutil --set LocalHostName "newName"</code>
+						<code>sudo scutil --set LocalHostName {computerName}</code>
 					</pre>
 					<pre>
-						<code>sudo scutil --set HostName "newName"</code>
+						<code>sudo scutil --set HostName {computerName}</code>
 					</pre>
 					<p>Security and privacy</p>
 					<ul>
