@@ -21,6 +21,7 @@ export default function ThemeChanger() {
 	return (
 		<Tooltip title={'Switch Theme'}>
 			<button
+				aria-label={'Switch Theme'}
 				onClick={e => {
 					e.preventDefault();
 					handleThemeChange();
