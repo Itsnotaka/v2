@@ -156,11 +156,14 @@ const Setups: NextPage = () => {
 							/usr/sbin/softwareupdate --install-rosetta --agree-to-license
 						</code>
 					</pre>
-					<span>Install Homebrew for M1 Chip</span>
+					<span>
+						Install Homebrew for M1 Chip (Its recommended to install 'Homebrew'
+						using 'Rosetta')
+					</span>
 					<pre>
 						<code>
-							arch -x86_64 /bin/bash -c "$(curl -fsSL
-							https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+							/bin/bash -c "$(curl -fsSL
+							https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 						</code>
 					</pre>
 					<span>Update Homebrew</span>
