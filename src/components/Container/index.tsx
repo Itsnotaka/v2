@@ -67,11 +67,11 @@ export default function Container({ children }: { children: ReactNode }) {
 						icon={<MusicIcon className="h-6 w-6" />}
 						title={'Music'}
 					/>
-					<NavItem
+					{/* <NavItem
 						href="/goods"
 						icon={<GiftIcon className="h-6 w-6" />}
 						title={'Goods'}
-					/>
+					/> */}
 					{/* <CommandPaletteButton
 						icon={<CmdIcon className="h-5 w-5" />}
 						title={'Command Palette'}
