@@ -54,15 +54,12 @@ const Home: NextPage = () => {
 							<span className="font-semibold">Finance</span>.
 						</p>
 					</div>
-
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
-					<p className="mt-3 text-base font-bold">
-						My Favorite Quote
-						<p className="font-mono font-normal">
-							<span className="text-blue-600">“</span>Think about why obvious
-							questions are obvious, that makes you understand how to solve
-							complex problems.<span className="text-blue-600">”</span>
-						</p>
+					<p className="mt-3 text-base font-bold">My Favorite Quote</p>{' '}
+					<p className="font-mono font-normal">
+						<span className="text-blue-600">“</span>Think about why obvious
+						questions are obvious, that makes you understand how to solve
+						complex problems.<span className="text-blue-600">”</span>
 					</p>
 					<p>
 						Building digital productivity tool at{' '}
