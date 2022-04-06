@@ -46,5 +46,6 @@ module.exports = {
 		'capitalized-comments': 'off',
 		'arrow-body-style': 'warn',
 		'curly': 'off',
+		'no-warning-comments': 'off',
 	},
 };

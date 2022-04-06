@@ -21,10 +21,11 @@ const WritingsPage = ({ slug }: Props) => {
 	return (
 		<>
 			<Head>
-				<title>{writing.name} — Daniel Fu</title>
+				<title>{writing.name}</title>
 			</Head>
 			<Container>
-				<article className="prose-p:whitespace-wrap prose pb-16 prose-h1:font-mono prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-hr:mt-3 prose-hr:h-1 prose-hr:w-full prose-hr:border-dotted dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
+				{/* TODO:Change class here for text to load differently */}
+				<article className="prose prose-h1:mb-3 prose-h1:bg-gradient-to-r prose-h1:from-pink-300 prose-h1:via-purple-300 prose-h1:to-indigo-400 prose-h1:bg-clip-text prose-h1:text-4xl prose-h1:text-transparent prose-hr:mt-0 prose-hr:mb-3 prose-p:dark:text-primary-250 prose-ul:dark:text-primary-250">
 					{writing.render()}
 				</article>
 			</Container>
