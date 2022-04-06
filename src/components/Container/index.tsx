@@ -58,9 +58,9 @@ export default function Container({ children }: { children: ReactNode }) {
 						title={'Setups'}
 					/>
 					<NavItem
-						href="/writing"
+						href="/writings"
 						icon={<PenIcon className="h-6 w-6" />}
-						title={'Writing'}
+						title={'Writings'}
 					/>
 					<NavItem
 						href="/music"
