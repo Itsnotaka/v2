@@ -14,7 +14,7 @@ export default function NavItem({
 	return (
 		<Tooltip title={title}>
 			<div>
-				<Link href={href} passHref scroll={false}>
+				<Link href={href} passHref scroll={true}>
 					<a
 						aria-label={title}
 						className={
