@@ -9,12 +9,12 @@ import {
 	PenIcon,
 	// CmdIcon,
 	MusicIcon,
-	GiftIcon,
+	// GiftIcon,
 } from '../Icons';
 import Layout from '../Layout';
 import {
 	Nav,
-	SpecialButton,
+	// SpecialButton,
 	Separator,
 	NavItem,
 	RedirectItem,
@@ -58,9 +58,9 @@ export default function Container({ children }: { children: ReactNode }) {
 						title={'Setups'}
 					/>
 					<NavItem
-						href="/writings"
+						href="/writing"
 						icon={<PenIcon className="h-6 w-6" />}
-						title={'Writings'}
+						title={'Writing'}
 					/>
 					<NavItem
 						href="/music"
