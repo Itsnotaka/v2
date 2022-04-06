@@ -22,7 +22,7 @@ const Setups: NextPage = () => {
 				<title>Setups — Daniel Fu</title>
 			</Head>
 			<Container>
-				<article className=" prose-p:whitespace-wrap prose pb-16 prose-h1:text-center prose-h1:font-mono prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-3 prose-hr:h-1 prose-hr:w-full prose-hr:border-dotted dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
+				<article className="prose-hr:border-[#343434] prose-p:whitespace-wrap prose pb-16 prose-h1:text-center prose-h1:font-mono prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-3 prose-hr:h-1 prose-hr:w-full prose-hr:border-dotted dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
 					<h1>My setup for web development</h1>
 					<p>
 						When I decided to get into development, I realized I need a place to
@@ -90,7 +90,10 @@ const Setups: NextPage = () => {
 					<input
 						placeholder="computer name"
 						className="cursor-text rounded-[4px] border border-primary-250 p-2 font-mono text-sm font-medium shadow-md"
-						onChange={e => setComputerName(e.target.value)}
+						onChange={e =>
+							// check if it is empty
+							e.target.value.length > 0 && setComputerName(e.target.value)
+						}
 					/>
 					<pre>
 						<code>sudo scutil --set ComputerName {computerName}</code>
