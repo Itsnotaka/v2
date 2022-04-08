@@ -6,7 +6,7 @@ export default class MyStory extends Writing {
 	public date = new Date('4 May 2021');
 	public slug = 'my-story';
 	public keywords = ['Startups', 'start', 'story'];
-	public hidden = false;
+	public hidden = true;
 	public excerpt = stripIndents`	
        My story.
     `;
