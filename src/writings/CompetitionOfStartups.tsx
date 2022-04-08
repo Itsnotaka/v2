@@ -4,7 +4,7 @@ import Writing from './writing';
 export default class CompetitionOfStartups extends Writing {
 	public name = 'Competition of startups';
 	public date = new Date('6 April 2022');
-	public slug = 'competition-of-startups.';
+	public slug = 'competition-of-startups';
 	public keywords = ['Startups', 'competitors'];
 	public hidden = false;
 	public excerpt = stripIndents`	
