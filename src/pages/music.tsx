@@ -63,7 +63,7 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 				<title>Music - Daniel Fu</title>
 			</Head>
 			<Container>
-				<article className="prose-hr:border-[#343434] prose-p:whitespace-wrap prose items-center justify-center pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
+				<article className="prose-p:whitespace-wrap prose items-center justify-center pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full prose-hr:border-[#343434] dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
 					{lastFM.status === 'playing' && (
 						<>
 							<h1 className="whitespace-wrap mx-auto flex items-center gap-x-2 text-left">
@@ -84,7 +84,9 @@ const Music = ({ tracks }: { tracks: Tracks }) => {
 					{lastFM.status !== 'playing' && (
 						<h1 className="flex items-center gap-x-2">
 							<SpotifyIcon className="h-12 w-12" />
-							Currently not listening to anything
+							<span className="text-gray-500 dark:text-gray-300">
+								Currently not listening to anything
+							</span>
 						</h1>
 					)}
 					<hr />
