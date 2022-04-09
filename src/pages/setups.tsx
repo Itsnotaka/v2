@@ -243,14 +243,14 @@ const Setups: NextPage = () => {
 						</code>
 					</pre>
 					<span>
-						Install yarn but before that -{' '}
+						Install yarn but before that - check out {' '}
 						<span>
 							<a
 								href="https://github.com/sindresorhus/guides/blob/main/npm-global-without-sudo.md"
 								target="_blank"
 								rel="noreferrer"
 							>
-								check out how to use <code>npm install -g</code> without sudo
+								how to use <code>npm install -g</code> without sudo
 							</a>
 						</span>
 					</span>
