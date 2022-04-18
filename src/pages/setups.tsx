@@ -175,7 +175,7 @@ const Setups: NextPage = () => {
 						<code>
 							brew install --cask \ bitwarden \ google-chrome \
 							visual-studio-code \ docker \ discord \ vlc \ hyper \ spotify \
-							fig
+							fig \ cakebrew
 						</code>
 					</pre>
 					<span>use Homebrew to install a Terminal applications</span>
