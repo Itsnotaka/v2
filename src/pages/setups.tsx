@@ -300,6 +300,15 @@ const Setups: NextPage = () => {
 						</li>
 						<li>
 							<a
+								href="https://texts.com/install/macos"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Texts (Better Text Manager)
+							</a>
+						</li>
+						<li>
+							<a
 								href="https://apps.apple.com/us/app/magnet/id441258766"
 								target="_blank"
 								rel="noreferrer"
