@@ -273,11 +273,11 @@ const Setups: NextPage = () => {
 						</li>
 						<li>
 							<a
-								href="https://flexibits.com/fantastical"
+								href="https://cron.com/download/macos"
 								target="_blank"
 								rel="noreferrer"
 							>
-								Fantastical (better calendar)
+								Cron (Better calendar)
 							</a>
 						</li>
 						<li>
