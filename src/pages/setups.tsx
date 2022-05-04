@@ -268,7 +268,7 @@ const Setups: NextPage = () => {
 								rel="noreferrer"
 								ref={RaycastRef}
 							>
-								Raycast (Better Spotlight)
+								Raycast (Better spotlight)
 							</a>
 						</li>
 						<li>
@@ -295,7 +295,7 @@ const Setups: NextPage = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								Air Buddy (Better Airpod control)
+								Air Buddy (Better airpod control)
 							</a>
 						</li>
 						<li>
@@ -304,7 +304,7 @@ const Setups: NextPage = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								Texts (Better Text Manager)
+								Texts (Better text manager)
 							</a>
 						</li>
 						<li>
@@ -313,7 +313,7 @@ const Setups: NextPage = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								Magnet (Window Snapping)
+								Magnet (Window snapping)
 							</a>
 						</li>
 						<li>
@@ -337,6 +337,15 @@ const Setups: NextPage = () => {
 								rel="noreferrer"
 							>
 								Hazeover (Screen focus dimmer)
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/MonitorControl/MonitorControl/releases"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Monitor Control (Adjust brightness of external monitors)
 							</a>
 						</li>
 					</ul>
