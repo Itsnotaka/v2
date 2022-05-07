@@ -81,6 +81,7 @@ const Setups: NextPage = () => {
 						<li>Show all file name extensions.</li>
 						<li>Remove item from bin after 30 days.</li>
 						<li>View &rarr; show preview.</li>
+						<li>Advance - search current folder.</li>
 					</ul>
 					<p>Sharing</p>
 					<ul>
