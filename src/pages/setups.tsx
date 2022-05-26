@@ -273,6 +273,11 @@ const Setups: NextPage = () => {
 							</a>
 						</li>
 						<li>
+							<a href="https://cleanshot.com/" target="_blank" rel="noreferrer">
+								Cleanshot X (Better screenshot)
+							</a>
+						</li>
+						<li>
 							<a
 								href="https://cron.com/download/macos"
 								target="_blank"
