@@ -89,7 +89,7 @@ export default function Anime() {
 						{animeList.map(anime => (
 							<a
 								key={anime.id}
-								className="flex items-center justify-center rounded-md shadow-2xl"
+								className="relative flex items-center justify-center rounded-md shadow-2xl"
 								target={'_blank'}
 								href={anime.link}
 								rel="noreferrer"
@@ -99,8 +99,11 @@ export default function Anime() {
 									alt={anime.title}
 									width={215}
 									height={305}
-									className="aspect-w-7 aspect-h-10 rounded-sm hover:scale-105 duration-300"
+									className="aspect-w-7 aspect-h-10 rounded-sm duration-300 hover:scale-105"
 								/>
+								<div className="absolute bottom-0 z-10 w-full bg-black p-3 pb-3 bg-opacity-70">
+									<span className="text-xs">{anime.title}</span>
+								</div>
 							</a>
 						))}
 					</section>
