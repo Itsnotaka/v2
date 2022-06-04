@@ -12,7 +12,7 @@ import SettingIcon from './Setting';
 import MusicIcon from './Music';
 import GiftIcon from './Gift';
 import SpotifyIcon from './Spotify';
-
+import VideoIcon from './Video';
 export {
 	HomeIcon,
 	MoonIcon,
@@ -28,4 +28,5 @@ export {
 	MusicIcon,
 	GiftIcon,
 	SpotifyIcon,
+	VideoIcon,
 };
