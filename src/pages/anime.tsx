@@ -111,7 +111,7 @@ export default function Anime() {
 									className="aspect-w-7 aspect-h-10 rounded-sm duration-300 hover:scale-105"
 								/>
 								<div className="absolute bottom-0 z-2 w-full bg-black hover:bg-opacity-80 duration-300 bg-opacity-70 p-3 pb-3">
-									<span className="text-xs ">{anime.title}</span>
+									<span className="text-xs">{anime.title}</span>
 								</div>
 							</a>
 						))}
