@@ -46,6 +46,24 @@ const animeList: AnimeList = [
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101291-L71WpAkZPtgm.jpg',
 	},
+	{
+		id: 7,
+		title: 'Toradora',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4224-3Bh0rm99N6Vl.jpg',
+	},
+	{
+		id: 8,
+		title: 'Mushoku Tensei',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-B9S9zC68eS5j.jpg',
+	},
+	{
+		id: 9,
+		title: 'Your lies in April',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-CnzR2zVpdxtR.png',
+	},
 ];
 export default function Anime() {
 	return (
@@ -55,15 +73,21 @@ export default function Anime() {
 			</Head>
 			<Container>
 				<article className="prose-p:whitespace-wrap prose pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full prose-hr:border-[#343434] dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
+					<h1>Anime</h1>
+					<span>Some of my favorite anime!</span>
+					<hr/>
 					<section className="grid grid-cols-3 gap-3">
 						{animeList.map(anime => (
-							<div key={anime.id}>
+							<div
+								key={anime.id}
+								className="flex items-center justify-center rounded-md shadow-2xl"
+							>
 								<Image
 									src={anime.image}
 									alt={anime.title}
 									width={215}
 									height={305}
-									className="aspect-w-7 aspect-h-10 flex items-center justify-center rounded-md shadow-2xl"
+									className="aspect-w-7 aspect-h-10 rounded-sm"
 								/>
 							</div>
 						))}
