@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Container from '../components/Container';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 type AnimeList = {
 	id: number;
@@ -75,6 +76,14 @@ const animeList: AnimeList = [
 	},
 ];
 export default function Anime() {
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) return null;
+
 	return (
 		<>
 			<Head>
@@ -101,7 +110,7 @@ export default function Anime() {
 									height={305}
 									className="aspect-w-7 aspect-h-10 rounded-sm duration-300 hover:scale-105"
 								/>
-								<div className="absolute bottom-0 z-10 w-full bg-black p-3 pb-3 bg-opacity-70">
+								<div className="absolute bottom-0 z-10 w-full bg-black bg-opacity-70 p-3 pb-3">
 									<span className="text-xs">{anime.title}</span>
 								</div>
 							</a>
