@@ -25,7 +25,7 @@ const WritingsPage = ({ slug }: Props) => {
 			</Head>
 			<Container>
 				{/* TODO:Change class here for text to load differently */}
-				<article className="pb-20 prose prose-h1:mb-3 prose-h1:bg-gradient-to-r prose-h1:from-pink-300 prose-h1:via-purple-300 prose-h1:to-indigo-400 prose-h1:bg-clip-text prose-h1:text-4xl prose-h1:text-transparent prose-hr:mt-0 prose-hr:mb-3 prose-p:dark:text-primary-250 prose-ul:dark:text-primary-250">
+				<article className="prose pb-20 prose-h1:mb-3 prose-h1:bg-gradient-to-r prose-h1:from-pink-300 prose-h1:via-purple-300 prose-h1:to-indigo-400 prose-h1:bg-clip-text prose-h1:text-4xl prose-h1:text-transparent prose-hr:mt-0 prose-hr:mb-3 prose-p:dark:text-primary-250 prose-ul:dark:text-primary-250">
 					{writing.render()}
 				</article>
 			</Container>
