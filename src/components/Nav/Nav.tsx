@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
 	HomeIcon,
 	MonitorIcon,
@@ -7,6 +6,7 @@ import {
 	TwitterIcon,
 	GithubIcon,
 	EmailIcon,
+	VideoIcon,
 } from '../Icons';
 import NavItem from './NavItem';
 import RedirectItem from './RedirectItem';
@@ -38,6 +38,11 @@ export default function Nav() {
 					href="/music"
 					icon={<MusicIcon className="h-6 w-6" />}
 					title={'Music'}
+				/>
+				<NavItem
+					href="/anime"
+					icon={<VideoIcon className="h-6 w-6" />}
+					title={'Anime'}
 				/>
 				{/* <NavItem
 						href="/goods"
