@@ -2,9 +2,9 @@ import Head from 'next/head';
 import Container from '../components/Container';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 type AnimeList = {
-	id: number;
 	title: string;
 	image: string;
 	description?: string;
@@ -13,68 +13,79 @@ type AnimeList = {
 
 const animeList: AnimeList = [
 	{
-		id: 1,
 		title: 'Hyouka',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12189-eBb6fcM21Zh7.jpg',
 		link: 'https://anilist.co/anime/12189/Hyouka/',
 	},
 	{
-		id: 2,
 		title: 'Hibike! Euphonium',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21460-ll92hPstsgzF.png',
 		link: 'https://anilist.co/anime/20912/Hibike-Euphonium/',
 	},
 	{
-		id: 3,
+		title: 'Your lies in April',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-CnzR2zVpdxtR.png',
+		link: 'https://anilist.co/anime/20665/Your-Lies-in-April/',
+	},
+	{
+		title: 'Kaguya sama',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112641-zoGC8d6FaPXU.jpg',
+		link: 'https://anilist.co/anime/112641/Kaguyasama-wa-Kokurasetai-Tensaitachi-no-Renai-Zunousen/',
+	},
+	{
+		title: 'Hibike! Euphonium 1/2',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21460-ll92hPstsgzF.png',
+		link: 'https://anilist.co/anime/21460/Hibike-Euphonium-2/',
+	},
+	{
+		// eslint-disable-next-line quotes
+		title: "Komi Can't Communicate",
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133965-9TZBS4m4yvED.png',
+		link: 'https://anilist.co/anime/133965/Komisan-wa-Komyushou-desu/',
+	},
+	{
 		title: 'Horimiya',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-h8EPH92nyRfS.jpg',
 		link: 'https://anilist.co/anime/124080/Horimiya/',
 	},
 	{
-		id: 4,
 		title: 'Spy x Family',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960-Yl5M3AiLZAMq.png',
 	},
 	{
-		id: 5,
 		title: 'My Dress Up Darling',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132405-qP7FQYGmNI3d.jpg',
 		link: 'https://anilist.co/anime/132405/Sono-Bisque-Doll-wa-Koi-wo-Suru/',
 	},
 	{
-		id: 6,
 		title: 'Bunny Girl Senpai',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101291-L71WpAkZPtgm.jpg',
 		link: 'https://anilist.co/anime/101291/Seishun-Buta-Yarou-wa-Bunny-Girl-Senpai-no-Yume-wo-Minai/',
 	},
 	{
-		id: 7,
-		title: 'Toradora',
+		title: 'Maidragon',
 		image:
-			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4224-3Bh0rm99N6Vl.jpg',
-		link: 'https://anilist.co/anime/4224/Toradora/',
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21776-FJiPcLQHeTiV.png',
+		link: 'https://anilist.co/anime/21776/Kobayashisan-Chi-no-Maidragon/',
 	},
 	{
-		id: 8,
 		title: 'Mushoku Tensei',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-B9S9zC68eS5j.jpg',
 		link: 'https://anilist.co/anime/108465/Mushoku-Tensei-Isekai-Ittara-Honki-Dasu/',
 	},
-	{
-		id: 9,
-		title: 'Your lies in April',
-		image:
-			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-CnzR2zVpdxtR.png',
-		link: 'https://anilist.co/anime/20665/Your-Lies-in-April/',
-	},
 ];
+
 export default function Anime() {
 	const [mounted, setMounted] = useState(false);
 
@@ -92,12 +103,12 @@ export default function Anime() {
 			<Container>
 				<article className="prose-p:whitespace-wrap prose z-10 pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full prose-hr:border-[#343434] dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
 					<h1>Anime</h1>
-					<span>Some of my favorite anime!</span>
+					<span>Some of my favorite animes!</span>
 					<hr />
 					<section className="grid grid-cols-3 gap-3">
 						{animeList.map(anime => (
 							<a
-								key={anime.id}
+								key={uuidv4()}
 								className="relative flex items-center justify-center rounded-md shadow-2xl"
 								target={'_blank'}
 								href={anime.link}
