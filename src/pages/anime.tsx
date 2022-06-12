@@ -48,7 +48,7 @@ const animeList: AnimeList = [
 	},
 	{
 		id: 6,
-		title: 'Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai',
+		title: 'Bunny Girl Senpai',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101291-L71WpAkZPtgm.jpg',
 		link: 'https://anilist.co/anime/101291/Seishun-Buta-Yarou-wa-Bunny-Girl-Senpai-no-Yume-wo-Minai/',
@@ -90,7 +90,7 @@ export default function Anime() {
 				<title>Anime — Daniel Fu</title>
 			</Head>
 			<Container>
-				<article className="prose-p:whitespace-wrap prose pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full prose-hr:border-[#343434] dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
+				<article className="prose-p:whitespace-wrap prose z-10 pb-16 prose-h1:text-2xl prose-h1:font-bold prose-p:mt-3 prose-p:text-base prose-p:font-bold prose-hr:mt-0 prose-hr:h-1 prose-hr:w-full prose-hr:border-[#343434] dark:text-primary-250 prose-h1:dark:text-primary-250 prose-a:dark:text-primary-250 prose-code:dark:text-primary-250">
 					<h1>Anime</h1>
 					<span>Some of my favorite anime!</span>
 					<hr />
@@ -108,9 +108,9 @@ export default function Anime() {
 									alt={anime.title}
 									width={215}
 									height={305}
-									className="aspect-w-7 aspect-h-10 rounded-sm duration-300 hover:scale-105"
+									className="aspect-h-20 aspect-w-14 rounded-sm duration-300 hover:scale-105"
 								/>
-								<div className="z-2 absolute bottom-0 w-full bg-black bg-opacity-70 p-3 pb-3 duration-300 hover:bg-opacity-80">
+								<div className="z-2 absolute bottom-0 max-h-16 w-full bg-black bg-opacity-70 p-3 pb-3 duration-300 hover:bg-opacity-80">
 									<span className="text-xs">{anime.title}</span>
 								</div>
 							</a>
