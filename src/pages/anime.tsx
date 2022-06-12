@@ -105,7 +105,7 @@ export default function Anime() {
 					<h1>Anime</h1>
 					<span>Some of my favorite animes!</span>
 					<hr />
-					<section className="grid grid-cols-3 gap-3">
+					<section className="grid grid-cols-1 md:grid-cols-3 gap-3">
 						{animeList.map(anime => (
 							<a
 								key={uuidv4()}
@@ -119,10 +119,10 @@ export default function Anime() {
 									alt={anime.title}
 									width={215}
 									height={305}
-									className="aspect-h-20 aspect-w-14 rounded-sm duration-300 hover:scale-105"
+									className="rounded-sm duration-300 hover:scale-105"
 								/>
-								<div className="z-2 absolute bottom-0 max-h-16 w-full bg-black bg-opacity-70 p-3 pb-3 duration-300 hover:bg-opacity-80">
-									<span className="text-xs">{anime.title}</span>
+								<div className="z-2 absolute bottom-0 w-[215px] bg-black bg-opacity-70 p-3 pb-3 duration-300 hover:bg-opacity-80">
+									<span className="h-full flex px-auto mx-auto text-xs">{anime.title}</span>
 								</div>
 							</a>
 						))}
