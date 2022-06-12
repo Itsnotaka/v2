@@ -56,6 +56,12 @@ const animeList: AnimeList = [
 		link: 'https://anilist.co/anime/124080/Horimiya/',
 	},
 	{
+		title: 'Maidragon',
+		image:
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21776-FJiPcLQHeTiV.png',
+		link: 'https://anilist.co/anime/21776/Kobayashisan-Chi-no-Maidragon/',
+	},
+	{
 		title: 'Spy x Family',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960-Yl5M3AiLZAMq.png',
@@ -71,12 +77,6 @@ const animeList: AnimeList = [
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101291-L71WpAkZPtgm.jpg',
 		link: 'https://anilist.co/anime/101291/Seishun-Buta-Yarou-wa-Bunny-Girl-Senpai-no-Yume-wo-Minai/',
-	},
-	{
-		title: 'Maidragon',
-		image:
-			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21776-FJiPcLQHeTiV.png',
-		link: 'https://anilist.co/anime/21776/Kobayashisan-Chi-no-Maidragon/',
 	},
 	{
 		title: 'Mushoku Tensei',
