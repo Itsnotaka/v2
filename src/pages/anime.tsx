@@ -37,10 +37,10 @@ const animeList: AnimeList = [
 		link: 'https://anilist.co/anime/112641/Kaguyasama-wa-Kokurasetai-Tensaitachi-no-Renai-Zunousen/',
 	},
 	{
-		title: 'Hibike! Euphonium 1/2',
+		title: 'Karakai Jouzu no Takagi-san',
 		image:
-			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21460-ll92hPstsgzF.png',
-		link: 'https://anilist.co/anime/21460/Hibike-Euphonium-2/',
+			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99468-XayCplkIL3Gf.png',
+		link: 'https://anilist.co/anime/99468/Karakai-Jouzu-no-Takagisan/',
 	},
 	{
 		// eslint-disable-next-line quotes
