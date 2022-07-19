@@ -25,7 +25,7 @@ const animeList: AnimeList = [
 		link: 'https://anilist.co/anime/20912/Hibike-Euphonium/',
 	},
 	{
-		title: 'Your lies in April',
+		title: 'Your lie in April',
 		image:
 			'https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-CnzR2zVpdxtR.png',
 		link: 'https://anilist.co/anime/20665/Your-Lies-in-April/',
