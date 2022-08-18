@@ -264,6 +264,15 @@ const Setups: NextPage = () => {
 					<ul>
 						<li>
 							<a
+								href="https://thebrowser.company/"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Arc by The Browser Company
+							</a>
+						</li>
+						<li>
+							<a
 								href="https://www.raycast.com/"
 								target="_blank"
 								rel="noreferrer"
