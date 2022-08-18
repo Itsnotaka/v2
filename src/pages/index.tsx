@@ -62,7 +62,7 @@ const Home: NextPage = () => {
 						complex problems.<span className="text-blue-600">”</span>
 					</p>
 					<p>
-						Building digital productivity tool at{' '}
+						Building EdTech Platform as a service at{' '}
 						<span className="font-mono font-semibold underline underline-offset-1">
 							Flow.
 						</span>
