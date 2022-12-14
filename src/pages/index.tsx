@@ -50,8 +50,8 @@ const Home: NextPage = () => {
 							from Taiwan.{'\n'}
 						</span>
 						<p>
-							Majoring in <span className="font-semibold">Economics</span> and{' '}
-							<span className="font-semibold">Finance</span>.
+							Majoring in <span className="font-semibold">Finance</span> and{' '}
+							<span className="font-semibold">Computer Science</span>.
 						</p>
 					</div>
 					<hr className="mt-3 mb-0 h-[1px] w-12" />
